@@ -1,0 +1,22 @@
+<%= form_for(herd) do |f| %>
+  <% if herd.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(herd.errors.count, "error") %> prohibited this herd from being saved:</h2>
+
+      <ul>
+      <% herd.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cats %>
+    <%= f.text_field :cats %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
