@@ -10,6 +10,11 @@ class HerdsController < ApplicationController
   # GET /herds/1
   # GET /herds/1.json
   def show
+    @herd = Herd.find(params[:id])
+    respond_to do |f|
+      f.js
+      f.html {render json: @herd.cats}
+    end
   end
 
   # GET /herds/new

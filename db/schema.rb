@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161122001051) do
+ActiveRecord::Schema.define(version: 20161122020830) do
+
+  create_table "cats", force: :cascade do |t|
+    t.integer  "herd_id"
+    t.string   "name"
+    t.integer  "age"
+    t.boolean  "cute"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["herd_id"], name: "index_cats_on_herd_id"
+  end
 
   create_table "herds", force: :cascade do |t|
-    t.string   "cats"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

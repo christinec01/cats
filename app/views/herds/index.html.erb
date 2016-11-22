@@ -13,15 +13,15 @@
   <tbody>
     <% @herds.each do |herd| %>
       <tr>
-        <td><%= herd.cats %></td>
-        <td><%= link_to 'Show', herd %></td>
+        <td><%= herd.name %></td>
+        <td><%= link_to 'Show', herd, remote: true %></td>
         <td><%= link_to 'Edit', edit_herd_path(herd) %></td>
         <td><%= link_to 'Destroy', herd, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<div id="container"></div>
 <br>
 
 <%= link_to 'New Herd', new_herd_path %>
